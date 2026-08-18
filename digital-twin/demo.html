@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+REGMED-CONNECT | RA Digital Twin Demo
+</title>
+
+<style>
+
+:root{
+--primary:#0b5ed7;
+--secondary:#0f172a;
+--light:#f7f9fc;
+--success:#198754;
+--warning:#f59e0b;
+--danger:#dc2626;
+--border:#dbe2ea;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:#f7f9fc;
+color:#1e293b;
+}
+
+.container{
+width:min(1200px,92%);
+margin:auto;
+}
+
+.header{
+background:#0f172a;
+color:white;
+padding:20px 0;
+}
+
+.header h1{
+font-size:1.8rem;
+}
+
+.header p{
+opacity:.8;
+margin-top:4px;
+}
+
+.notice{
+background:#fff4e5;
+color:#9a6700;
+padding:12px;
+text-align:center;
+font-weight:600;
+border-bottom:1px solid #f2d29f;
+}
+
+.section{
+padding:40px 0;
+}
+
+.kpi-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.kpi{
+background:white;
+padding:25px;
+border-radius:12px;
+border:1px solid var(--border);
+text-align:center;
+}
+
+.kpi h2{
+font-size:2rem;
+color:var(--primary);
+}
+
+.kpi p{
+color:#64748b;
+}
+
+.card{
+background:white;
+border:1px solid var(--border);
+border-radius:12px;
+padding:25px;
+margin-top:20px;
+}
+
+.section-title{
+font-size:1.6rem;
+margin-bottom:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#f1f5f9;
+}
+
+th,td{
+padding:12px;
+border-bottom:1px solid #e5e7eb;
+text-align:left;
+}
+
+.high{
+color:var(--danger);
+font-weight:bold;
+}
+
+.medium{
+color:var(--warning);
+font-weight:bold;
+}
+
+.low{
+color:var(--success);
+font-weight:bold;
+}
+
+.submission-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+margin-top:25px;
+}
+
+.twin-box{
+background:white;
+border:1px solid var(--border);
+border-radius:12px;
+padding:25px;
+}
+
+.label{
+font-size:.85rem;
+color:#64748b;
+margin-bottom:4px;
+}
+
+.value{
+font-size:1.1rem;
+margin-bottom:15px;
+font-weight:600;
+}
+
+.rule{
+background:#f8fafc;
+padding:10px;
+border-radius:8px;
+margin-bottom:10px;
+}
+
+.event{
+padding:14px;
+border-left:4px solid var(--primary);
+background:#f8fafc;
+margin-bottom:12px;
+}
+
+.ai-box{
+background:#0f172a;
+color:white;
+padding:25px;
+border-radius:12px;
+}
+
+.ai-response{
+margin-top:15px;
+background:#1e293b;
+padding:15px;
+border-radius:8px;
+line-height:1.8;
+}
+
+.footer{
+padding:30px;
+text-align:center;
+color:#64748b;
+}
+
+.button{
+display:inline-block;
+background:var(--primary);
+color:white;
+padding:10px 18px;
+border-radius:8px;
+margin-top:15px;
+text-decoration:none;
+}
+
+@media(max-width:900px){
+
+.kpi-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.submission-container{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="notice">
+DEMO DATA ONLY • NOT REAL FDA DATA • NOT FOR REGULATORY DECISION MAKING
+</div>
+
+<header class="header">
+
+<div class="container">
+
+<h1>
+REGMED-CONNECT
+</h1>
+
+<p>
+Regulatory Affairs Digital Twin Demo
+</p>
+
+</div>
+
+</header>
+
+<section class="section">
+
+<div class="container">
+
+<div class="kpi-grid">
+
+<div class="kpi">
+<h2>42</h2>
+<p>Active Submissions</p>
+</div>
+
+<div class="kpi">
+<h2>7</h2>
+<p>High Risk Cases</p>
+</div>
+
+<div class="kpi">
+<h2>81</h2>
+<p>Average Health Score</p>
+</div>
+
+<div class="kpi">
+<h2>18</h2>
+<p>Regulatory Events</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="card">
+
+<h2 class="section-title">
+Control Tower Dashboard
+</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Submission</th>
+<th>Status</th>
+<th>Health Score</th>
+<th>Risk</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>510K-001</td>
+<td>Reviewing</td>
+<td>82</td>
+<td class="high">High</td>
+</tr>
+
+<tr>
+<td>NDA-003</td>
+<td>Questioned</td>
+<td>67</td>
+<td class="high">High</td>
+</tr>
+
+<tr>
+<td>PMA-002</td>
+<td>Submitted</td>
+<td>91</td>
+<td class="low">Low</td>
+</tr>
+
+<tr>
+<td>BLA-005</td>
+<td>Responded</td>
+<td>75</td>
+<td class="medium">Medium</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">
+Submission Twin
+</h2>
+
+<div class="submission-container">
+
+<div class="twin-box">
+
+<div class="label">
+Submission
+</div>
+
+<div class="value">
+510K-001
+</div>
+
+<div class="label">
+Current Status
+</div>
+
+<div class="value">
+Reviewing
+</div>
+
+<div class="label">
+Health Score
+</div>
+
+<div class="value">
+82 / 100
+</div>
+
+<div class="label">
+Risk Score
+</div>
+
+<div class="value">
+65 / 100 (High)
+</div>
+
+</div>
+
+<div class="twin-box">
+
+<h3>
+Triggered Risk Rules
+</h3>
+
+<br>
+
+<div class="rule">
+R-CMC-001<br>
+Open Deficiency Count &gt; 2
+</div>
+
+<div class="rule">
+R-RESP-002<br>
+Response Delay Detected
+</div>
+
+<div class="rule">
+R-REG-001<br>
+Affected by New FDA Guidance
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="card">
+
+<h2 class="section-title">
+Regulatory Intelligence
+</h2>
+
+<div class="event">
+FDA Guidance 2026-001<br>
+Impact Area: Sterility Validation Requirements
+</div>
+
+<div class="event">
+ICH Draft Guideline Update<br>
+Potential Impact: Biological Product Documentation
+</div>
+
+<div class="event">
+Federal Register Notice<br>
+Potential Impact: Submission Review Timelines
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="ai-box">
+
+<h2>
+RA AI Copilot
+</h2>
+
+<p>
+Question:
+Why is 510K-001 High Risk?
+</p>
+
+<div class="ai-response">
+
+510K-001 currently has an elevated risk profile due to:
+
+<br><br>
+
+• Open CMC deficiencies
+
+<br>
+
+• Delayed response activity
+
+<br>
+
+• Recent FDA guidance affecting sterility validation
+
+<br><br>
+
+Suggested Review Actions:
+
+<br>
+
+1. Close outstanding deficiencies
+
+<br>
+
+2. Update impacted documentation
+
+<br>
+
+3. Recalculate submission health score
+
+<br><br>
+
+AI-generated analysis.
+Regulatory decision must be made by qualified RA personnel.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="footer">
+
+REGMED-CONNECT RA Digital Twin MVP
+
+<br>
+
+Submission Twin · Risk Engine · Regulatory Intelligence · AI Copilot
+
+</div>
+
+</body>
+</html>
