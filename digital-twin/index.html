@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+REGMED-CONNECT | Regulatory Affairs Digital Twin
+</title>
+
+<meta
+name="description"
+content="REGMED-CONNECT Regulatory Affairs Digital Twin Platform. Submission Twin, Regulatory Intelligence, Risk Engine, AI Copilot and Executive Control Tower."
+>
+
+<style>
+
+:root{
+    --primary:#0b5ed7;
+    --secondary:#0f172a;
+    --accent:#0ea5a4;
+    --bg:#ffffff;
+    --light:#f6f8fb;
+    --border:#dbe2ea;
+    --text:#1f2937;
+    --text-light:#64748b;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    color:var(--text);
+    line-height:1.7;
+}
+
+.container{
+    width:min(1180px,90%);
+    margin:auto;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:white;
+    border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+    min-height:76px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.3rem;
+    font-weight:800;
+}
+
+.logo span{
+    display:block;
+    font-size:.7rem;
+    color:var(--text-light);
+}
+
+nav a{
+    margin-left:25px;
+    color:var(--secondary);
+    font-weight:600;
+}
+
+.hero{
+    background:
+    linear-gradient(
+    135deg,
+    #081b33,
+    #123c6a,
+    #0f766e
+    );
+
+    color:white;
+    padding:120px 0;
+}
+
+.hero h1{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:24px;
+}
+
+.hero p{
+    max-width:800px;
+    font-size:1.2rem;
+    opacity:.9;
+}
+
+.cta{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 24px;
+    border-radius:8px;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.btn-primary{
+    background:white;
+    color:#0b5ed7;
+}
+
+.btn-secondary{
+    border:1px solid white;
+    color:white;
+    margin-left:12px;
+}
+
+.section{
+    padding:90px 0;
+}
+
+.section-light{
+    background:var(--light);
+    padding:90px 0;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:15px;
+    font-size:2.2rem;
+}
+
+.subtitle{
+    text-align:center;
+    color:var(--text-light);
+    max-width:800px;
+    margin:auto auto 50px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:10px;
+    border:1px solid var(--border);
+}
+
+.card h3{
+    margin-bottom:12px;
+    color:var(--secondary);
+}
+
+.architecture{
+    background:white;
+    border-radius:12px;
+    padding:40px;
+    border:1px solid var(--border);
+    text-align:center;
+    font-size:1.05rem;
+}
+
+.architecture div{
+    margin:15px 0;
+}
+
+.dashboard{
+    border:1px solid var(--border);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.dashboard-header{
+    background:#0f172a;
+    color:white;
+    padding:18px;
+    font-weight:700;
+}
+
+.dashboard-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td{
+    padding:14px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+}
+
+.high{
+    color:#dc2626;
+    font-weight:700;
+}
+
+.medium{
+    color:#f59e0b;
+    font-weight:700;
+}
+
+.low{
+    color:#16a34a;
+    font-weight:700;
+}
+
+.roadmap{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.phase{
+    background:white;
+    border:1px solid var(--border);
+    padding:24px;
+    border-radius:10px;
+}
+
+.phase h3{
+    margin-bottom:12px;
+}
+
+.footer-cta{
+    background:
+    linear-gradient(
+    135deg,
+    #081b33,
+    #123c6a
+    );
+
+    color:white;
+    text-align:center;
+    padding:100px 0;
+}
+
+.footer-cta h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+footer{
+    background:#08111f;
+    color:#cbd5e1;
+    text-align:center;
+    padding:30px 0;
+}
+
+@media(max-width:900px){
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.roadmap{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:2.4rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container header-inner">
+
+<div class="logo">
+REGMED-CONNECT
+<span>
+Regulatory Affairs Digital Twin
+</span>
+</div>
+
+<nav>
+<a href="../index.html#capabilitiesCapabilities</a>
+<a hrefectureArchitecture</a>
+<a href="#dashboard">Dashboard</a>
+dmap</a>
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>
+Regulatory Affairs<br>
+Digital Twin
+</h1>
+
+<p>
+Know Your Submission.
+Predict Regulatory Risk.
+Understand Regulatory Change.
+A next-generation Regulatory Intelligence Platform
+for Medical Device, Biotechnology and Pharmaceutical Organizations.
+</p>
+
+<div class="cta">
+
+<a href="#
+View Platform
+</a>
+
+<a href="../index.html#chedule Consultation
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="capabilities" class="section">
+
+<div class="container">
+
+<h2 class="title">
+Platform Capabilities
+</h2>
+
+<p class="subtitle">
+A unified platform combining Submission Twin,
+Regulatory Intelligence, Risk Analytics and AI Copilot.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Submission Twin</h3>
+<p>
+Track lifecycle status, deficiencies,
+questions and submission health.
+</p>
+</div>
+
+<div class="card">
+<h3>Risk Engine</h3>
+<p>
+Explainable rule-based risk scoring
+with full traceability.
+</p>
+</div>
+
+<div class="card">
+<h3>Regulatory Intelligence</h3>
+<p>
+Monitor FDA Guidance,
+Federal Register and ICH updates.
+</p>
+</div>
+
+<div class="card">
+<h3>Health Score</h3>
+<p>
+Assess submission readiness and
+operational performance.
+</p>
+</div>
+
+<div class="card">
+<h3>AI Copilot</h3>
+<p>
+Explain risks, impact analysis
+and regulatory events.
+</p>
+</div>
+
+<div class="card">
+<h3>Executive Control Tower</h3>
+<p>
+Portfolio-level regulatory visibility
+for leadership teams.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="architecture" class="section-light">
+
+<div class="container">
+
+<h2 class="title">
+Digital Twin Architecture
+</h2>
+
+<div class="architecture">
+
+<div>FDA Guidance + ICH + Regulatory Events</div>
+
+<div>↓</div>
+
+<div>Regulatory Event Twin</div>
+
+<div>↓</div>
+
+<div>Submission Twin</div>
+
+<div>↓</div>
+
+<div>Risk Engine</div>
+
+<div>↓</div>
+
+<div>AI Copilot</div>
+
+<div>↓</div>
+
+<div>Executive Control Tower</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="dashboard" class="section">
+
+<div class="container">
+
+<h2 class="title">
+Control Tower Dashboard
+</h2>
+
+<p class="subtitle">
+Illustrative Demo Data
+</p>
+
+<div class="dashboard">
+
+<div class="dashboard-header">
+Top Risk Submissions
+</div>
+
+<table class="dashboard-table">
+
+<thead>
+
+<tr>
+<th>Submission</th>
+<th>Status</th>
+<th>Health</th>
+<th>Risk</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>NDA-001</td>
+<td>Reviewing</td>
+<td>82</td>
+<td class="high">High</td>
+</tr>
+
+<tr>
+<td>510K-004</td>
+<td>Questioned</td>
+<td>69</td>
+<td class="high">High</td>
+</tr>
+
+<tr>
+<td>PMA-002</td>
+<td>Submitted</td>
+<td>91</td>
+<td class="low">Low</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="roadmap" class="section-light">
+
+<div class="container">
+
+<h2 class="title">
+Product Roadmap
+</h2>
+
+<div class="roadmap">
+
+<div class="phase">
+<h3>Phase 1</h3>
+Submission Twin<br>
+Risk Engine<br>
+Control Tower
+</div>
+
+<div class="phase">
+<h3>Phase 2</h3>
+Inspection Twin<br>
+Quality Twin<br>
+Digital Thread
+</div>
+
+<div class="phase">
+<h3>Phase 3</h3>
+Knowledge Graph<br>
+Predictive Analytics<br>
+Global Regulatory Intel
+</div>
+
+<div class="phase">
+<h3>Phase 4</h3>
+Enterprise Regulatory Twin<br>
+AI Review Twin<br>
+GxP Validation
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="footer-cta">
+
+<div class="container">
+
+<h2>
+Ready to Modernize Regulatory Affairs?
+</h2>
+
+<p>
+Discover how Regulatory Digital Twin capabilities
+can improve visibility, intelligence and risk management.
+</p>
+
+<br>
+
+../index.html#contact
+Request a Demo
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+© 2026 REGMED-CONNECT
+
+<br>
+
+Regulatory Affairs Digital Twin Platform
+
+</div>
+
+</footer>
+
+</body>
+</html>
